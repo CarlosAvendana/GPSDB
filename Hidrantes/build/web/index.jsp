@@ -4,6 +4,7 @@
     Author     : paoma
 --%>
 
+<%@page import="data.Dao"%>
 <%@page import="data.RealDataBase"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,8 +14,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% RealDataBase rdb = new RealDataBase(); %>
-        <% rdb.dbConnection(); %>
+        <% Dao rdb = new Dao(); %>
+        <% rdb.BomberoAdd(); %>
         <h1>Hello World!</h1>
     </body>
 </html>

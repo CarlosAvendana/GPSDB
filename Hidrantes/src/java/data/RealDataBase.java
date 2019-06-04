@@ -7,7 +7,9 @@ package data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +21,11 @@ public class RealDataBase {
     String url="jdbc:postgresql://localhost:5433/hidrantes";
     String user="postgres";
     String password="postgres";
-    Connection  connection;
+    Connection  cnx;
+    
+    public RealDataBase(){
+        cnx=this.dbConnection();
+    }
     
     public Connection dbConnection(){
         try{
@@ -29,14 +35,43 @@ public class RealDataBase {
             e.getMessage();
         }
         try {
-            DriverManager.getConnection(url,user,password);
+            cnx = DriverManager.getConnection(url,user,password);
             System.out.println("Connected");
         } catch (SQLException ex) {
             Logger.getLogger(RealDataBase.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Failed");
         }
-        return connection;
+        return cnx;
     }
+    public int executeUpdate(String statement) {
+        try {
+            Statement stm = cnx.createStatement();
+            stm.executeUpdate(statement);
+            return stm.getUpdateCount();
+        } catch (SQLException ex) {
+            return 0;
+        }
+    }
+    public ResultSet executeQuery(String statement){
+        try {
+            Statement stm = cnx.createStatement();
+            return stm.executeQuery(statement);
+        } catch (SQLException ex) {
+        }
+        return null;
+    }
+    
+    public int executeUpdateWithKeys(String statement) {
+        try {
+            Statement stm = cnx.createStatement();
+            stm.executeUpdate(statement,Statement.RETURN_GENERATED_KEYS);
+            ResultSet keys = stm.getGeneratedKeys();
+            keys.next();
+            return keys.getInt(1);
+        } catch (SQLException ex) {
+            return -1;
+        }
+    }    
  
    
 }
