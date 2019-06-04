@@ -30,8 +30,8 @@
     <a href="javascript:void(0)" class="dropbtn">Departamento de Bomberos</a>
     <div class="dropdown-content">
      <a href="#">Listado de Hidrantes</a>
-                <a href="#">Formulario de Mantenimiento</a>
-                <a href="#">Formulario de Trabajo</a>
+                <a href="#">Inspeccion Ocular</a>
+                <a href="#">Bomberos</a>
     </div>
   </li>
 </ul>
