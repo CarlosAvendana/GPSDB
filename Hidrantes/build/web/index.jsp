@@ -11,11 +11,33 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Hidrantes</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
         <% Dao rdb = new Dao(); %>
-        <% rdb.BomberoAdd(); %>
-        <h1>Hello World!</h1>
+        <ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Municicipalidad de Alajuela</a>
+    <div class="dropdown-content">
+      <a href="#">Formulario de Instalación</a>
+                <a href="#">Formulario de Mantenimiento</a>
+                <a href="#">Formulario de Trabajo</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Departamento de Bomberos</a>
+    <div class="dropdown-content">
+     <a href="#">Listado de Hidrantes</a>
+                <a href="#">Formulario de Mantenimiento</a>
+                <a href="#">Formulario de Trabajo</a>
+    </div>
+  </li>
+</ul>
+
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+       
     </body>
 </html>
