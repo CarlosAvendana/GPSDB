@@ -8,9 +8,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="js/jquery.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de Hidrantes</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/listaoHidrantes.js" type="text/javascript"></script>
     </head>
     <body>
         <ul>
@@ -33,5 +35,20 @@
   </li>
 </ul>
         <h1>Listado de Hidrantes</h1>
+        <table>
+            <tr>
+                <th>Codigo</th>
+                <th>Caudal</th>
+                <th>Estado</th>
+                <th>Numero de Salidas</th>
+                <th>Tamaño de Salidas</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+            </tr>
+            <tbody id="listado">
+                
+            </tbody>
+        </table>
+        
     </body>
 </html>

@@ -8,12 +8,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="js/jquery.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Radio Positivo de Hidrantes</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
-         <ul>
+        <ul>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Municicipalidad de Alajuela</a>
     <div class="dropdown-content">
@@ -33,5 +35,7 @@
   </li>
 </ul>
         <h1>Radio positivo de hidrantes</h1>
+
+    
     </body>
 </html>

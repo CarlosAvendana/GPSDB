@@ -42,6 +42,5 @@
 
 <h3>Mantenimiento de Hidrantes</h3>
 <p>Instalacion y mantenimiento de hidrantes en el casco central de Alajuela.</p>
-       
-    </body>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1964.4949555498656!2d-84.2137725443628!3d10.017690648885814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9c871fbddb3%3A0xb1f90fbc26bf36cb!2sProvincia+de+Alajuela%2C+Alajuela!5e0!3m2!1ses!2scr!4v1559773194015!5m2!1ses!2scr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></body>
 </html>

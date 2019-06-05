@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import logic.Bombero;
+import logic.Hidrante;
 
 /**
  *
@@ -20,12 +21,6 @@ public class Dao {
     public Dao(){
         db= new RealDataBase();
         
-    }
-    public void BomberoAdd()throws SQLException{
-         String sql="insert into bombero (codigo, nombre)"+
-                "values(111,'Juan Lopez')";
-        
-        db.executeUpdate(sql);
     }
     public ArrayList<Bombero> BomberosGetAll () throws SQLException {
         String sql = "select * from bombero";
@@ -83,5 +78,44 @@ public class Dao {
         } 
     }
     
+    public ArrayList<Hidrante> HidrantesGetAll () throws SQLException {
+        String sql = "select * from hidrante";
+        
+        ResultSet rs = db.executeQuery(sql);
+        
+        ArrayList<Hidrante> hidrantes = new ArrayList<Hidrante>();
+        Hidrante hidrante = null;
+        
+        while(rs.next()){   
+            hidrante = hidrante(rs);
+            hidrantes.add(hidrante);
+        }   
+        return hidrantes;
+    }
+    
+    public void HidranteAdd(Hidrante s)throws SQLException{
+         String sql="insert into hidrante (codigo, caudal, numero_salidas, tamano_salidas, estado, latitud, longitud)"+
+                "values('%s',%d, %d,'%s','%s', %f,%f)";
+        sql=String.format(sql,s.getCodigo(), s.getCaudal(), s.getNumero_salidas(), s.getTamano_salidas(), s.getEstado(), s.getLatitud(), s.getLongitud());
+        db.executeUpdate(sql); 
+    }
+    private Hidrante hidrante (ResultSet rs) throws SQLException{
+        
+        try {
+            
+            Hidrante hidrante = new Hidrante();
+            hidrante.setCodigo(rs.getString("codigo"));
+            hidrante.setCaudal(rs.getInt("caudal"));
+            hidrante.setNumero_salidas(rs.getInt("numero_salidas"));
+            hidrante.setTamano_salidas(rs.getString("tamano_salidas"));
+            hidrante.setEstado(rs.getString("estado"));
+            hidrante.setLatitud(rs.getFloat("latitud"));
+            hidrante.setLongitud(rs.getFloat("longitud"));
+            return hidrante;
+
+        } catch (SQLException ex) {
+            return null;
+        } 
+    }
 }
 

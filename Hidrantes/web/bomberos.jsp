@@ -37,7 +37,7 @@
         </ul>
         <h1>Bomberos</h1>
         <table>
-            <tr><td colspan="3"><button class="btnSearch" onclick="mostrarAddModal()">Agregar bombero</button></td></tr>
+            <tr><td colspan="3"><button class="btn" onclick="mostrarAddModal()">Agregar bombero</button></td></tr>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>

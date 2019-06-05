@@ -38,4 +38,11 @@ public class Model {
     
     }
     
+    public ArrayList<Hidrante> getHidrantes() throws SQLException{//Se trae todas las solicitudes existentes
+        return dao.HidrantesGetAll();
+    }
+    public void addHidrante(Hidrante s)throws SQLException{
+        dao.HidranteAdd(s);
+    }
+    
 }
