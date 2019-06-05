@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="js/jquery.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hidrantes</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
@@ -21,23 +22,26 @@
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Municicipalidad de Alajuela</a>
     <div class="dropdown-content">
-      <a href="#">Formulario de Instalación</a>
-                <a href="#">Formulario de Mantenimiento</a>
-                <a href="#">Formulario de Trabajo</a>
+      
+      <a href="formularioInstalacion.jsp">Formulario de Instalación</a>
+      <a href="formularioMantenimiento.jsp">Formulario de Mantenimiento</a>
+                
     </div>
   </li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Departamento de Bomberos</a>
     <div class="dropdown-content">
-     <a href="#">Listado de Hidrantes</a>
-                <a href="#">Inspeccion Ocular</a>
-                <a href="#">Bomberos</a>
+    <a href="listadoHidrantes.jsp">Listado de Hidrantes</a>
+     <a href="rph.jsp">Radio Positivo de Hidrantes</a>
+                <a href="inspeccionOcular.jsp">Inspeccion Ocular</a>
+                
+                <a href="bomberos.jsp">Bomberos</a>
     </div>
   </li>
 </ul>
 
-<h3>Dropdown Menu inside a Navigation Bar</h3>
-<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+<h3>Mantenimiento de Hidrantes</h3>
+<p>Instalacion y mantenimiento de hidrantes en el casco central de Alajuela.</p>
        
     </body>
 </html>
