@@ -9,12 +9,13 @@ package logic;
  *
  * @author paoma
  */
-public class Inspeccion_ocular {
+public class Formulario_trabajo_realizado {
     String id;
-    Usuario usuario;
+    String tipo;
     String fecha;
+    Hidrante hidrante;
 
-    public Inspeccion_ocular() {
+    public Formulario_trabajo_realizado() {
     }
 
     public String getId() {
@@ -25,12 +26,12 @@ public class Inspeccion_ocular {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getFecha() {
@@ -39,6 +40,14 @@ public class Inspeccion_ocular {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public Hidrante getHidrante() {
+        return hidrante;
+    }
+
+    public void setHidrante(Hidrante hidrante) {
+        this.hidrante = hidrante;
     }
     
 }

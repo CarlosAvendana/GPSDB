@@ -10,37 +10,79 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <base href="http://localhost:8080/Hidrantes/" >
         <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Hidrantes</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/sesion.js" type="text/javascript"></script>
     </head>
     <body>
         <% Dao rdb = new Dao(); %>
-        <ul>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Municicipalidad de Alajuela</a>
-    <div class="dropdown-content">
+        
+        <nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Mantenimiento de Hidrantes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+</nav>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-auto"></div>
+            </div>
+  <div class="row">
+    <div class="col-sm">
       
-      <a href="formularioInstalacion.jsp">Formulario de Instalación</a>
-      <a href="formularioMantenimiento.jsp">Formulario de Mantenimiento</a>
-                
     </div>
-  </li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Departamento de Bomberos</a>
-    <div class="dropdown-content">
-    <a href="listadoHidrantes.jsp">Listado de Hidrantes</a>
-     <a href="rph.jsp">Radio Positivo de Hidrantes</a>
-                <a href="inspeccionOcular.jsp">Inspeccion Ocular</a>
-                
-                <a href="bomberos.jsp">Bomberos</a>
-    </div>
-  </li>
-</ul>
+    <div class="col-sm-7">
+      <form>
+             <div>
+        <table class="table  mr-md-3 mg-5"> 
+            <tr><td>
 
-<h3>Mantenimiento de Hidrantes</h3>
-<p>Instalacion y mantenimiento de hidrantes en el casco central de Alajuela.</p>
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1964.4949555498656!2d-84.2137725443628!3d10.017690648885814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9c871fbddb3%3A0xb1f90fbc26bf36cb!2sProvincia+de+Alajuela%2C+Alajuela!5e0!3m2!1ses!2scr!4v1559773194015!5m2!1ses!2scr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></body>
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="text" class="form-control form-control-lg" id="id" aria-describedby="id" placeholder="ID...">
+  </div>
+  <div class="form-group">
+    <label for="contrasena">Contraseña</label>
+    <input type="password" class="form-control form-control-lg" id="contrasena" placeholder="Contraseña...">
+  </div>
+  <div class="form-group">
+  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="inicioSesion()">Iniciar Sesión</button>
+  </div>
+                </td></tr>
+        </table>
+             </div>
+             </form>
+    </div>
+    <div class="col-sm">
+      
+    </div>
+  </div>
+</div>
+        
+        <div class="modal" tabindex="-1" role="dialog" id="falloLogin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Fallo al inicio de sesión</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Usuario no registrado</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+         
+    </body>
 </html>

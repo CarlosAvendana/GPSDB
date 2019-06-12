@@ -8,7 +8,7 @@ package data;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import logic.Bombero;
+import logic.Usuario;
 import logic.Hidrante;
 
 /**
@@ -22,56 +22,85 @@ public class Dao {
         db= new RealDataBase();
         
     }
-    public ArrayList<Bombero> BomberosGetAll () throws SQLException {
-        String sql = "select * from bombero";
+    public ArrayList<Usuario> UsuariosGetAll () throws SQLException {
+        String sql = "select * from usuario";
         
         ResultSet rs = db.executeQuery(sql);
         
-        ArrayList<Bombero> bomberos = new ArrayList<Bombero>();
-        Bombero bombero = null;
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+        Usuario usuario = null;
         
         while(rs.next()){   
-            bombero = bombero(rs);
-            bomberos.add(bombero);
+            usuario = usuario(rs);
+            usuarios.add(usuario);
         }   
-        return bomberos;
+        return usuarios;
     }
     
-    public void BomberoAdd(Bombero s)throws SQLException{
-         String sql="insert into bombero (codigo, nombre)"+
-                "values('%s','%s')";
-        sql=String.format(sql,s.getId(), s.getNombre());
+    public ArrayList<Usuario> UsuariosGetBomberos () throws SQLException {
+        String sql = "select * from usuario where departamento='BOMBEROS'";
+        
+        ResultSet rs = db.executeQuery(sql);
+        
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+        Usuario usuario = null;
+        
+        while(rs.next()){   
+            usuario = usuario(rs);
+            usuarios.add(usuario);
+        }   
+        return usuarios;
+    }
+    
+    public void UsuarioAdd(Usuario s)throws SQLException{
+         String sql="insert into usuario (id, nombre, contrasena, departamento)"+
+                "values('%s','%s','%s','%s')";
+        sql=String.format(sql,s.getId(), s.getNombre(),s.getContrasena(),s.getDepartamento());
         db.executeUpdate(sql);
         
         
     }
     
-    public Bombero getBombero(String s) throws SQLException {
+    public Usuario getUsuario(Usuario s) throws SQLException {
         try {
-            String sql = "select * from bombero where codigo='%s'";
-            sql = String.format(sql, s);
+            String sql = "select * from usuario where id='%s' and contrasena='%s'";
+            sql = String.format(sql, s.getId(), s.getContrasena());
             ResultSet rs = db.executeQuery(sql);
             if(rs.next()){  
-                return bombero(rs);
+                return usuario(rs);
             }
         } catch (SQLException ex) {System.out.println(" MAL");}
         return null;
     }
     
-    public void updateBombero(Bombero d) throws SQLException{
-        String sql="update bombero set nombre='%s' where codigo='%s'";
+    public Usuario getUsuarioBom(String s) throws SQLException {
+        try {
+            String sql = "select * from usuario where id='%s' and departamento='BOMBEROS'";
+            sql = String.format(sql, s);
+            ResultSet rs = db.executeQuery(sql);
+            if(rs.next()){  
+                return usuario(rs);
+            }
+        } catch (SQLException ex) {System.out.println(" MAL");}
+        return null;
+    }
+    
+    public void updateUsuario(Usuario d) throws SQLException{
+        String sql="update usuario set nombre='%s' where id='%s'";
         sql=String.format(sql,d.getNombre(), d.getId());
         db.executeUpdate(sql);
     }
     
-    private Bombero bombero (ResultSet rs) throws SQLException{
+    private Usuario usuario (ResultSet rs) throws SQLException{
         
         try {
             
-            Bombero bombero = new Bombero();
-            bombero.setId(rs.getString("codigo"));
-           bombero.setNombre(rs.getString("nombre"));
-            return bombero;
+            Usuario usuario = new Usuario();
+            usuario.setId(rs.getString("id"));
+           usuario.setNombre(rs.getString("nombre"));
+           usuario.setContrasena(rs.getString("contrasena"));
+           usuario.setDepartamento(rs.getString("departamento"));
+            return usuario;
 
         } catch (SQLException ex) {
             return null;
@@ -94,9 +123,9 @@ public class Dao {
     }
     
     public void HidranteAdd(Hidrante s)throws SQLException{
-         String sql="insert into hidrante (codigo, caudal, numero_salidas, tamano_salidas, estado, latitud, longitud)"+
+         String sql="insert into hidrante (id, caudal, numero_salidas, tamano_salidas, estado, latitud, longitud)"+
                 "values('%s',%d, %d,'%s','%s', %f,%f)";
-        sql=String.format(sql,s.getCodigo(), s.getCaudal(), s.getNumero_salidas(), s.getTamano_salidas(), s.getEstado(), s.getLatitud(), s.getLongitud());
+        sql=String.format(sql,s.getId(), s.getCaudal(), s.getNumero_salidas(), s.getTamano_salidas(), s.getEstado(), s.getLatitud(), s.getLongitud());
         db.executeUpdate(sql); 
     }
     private Hidrante hidrante (ResultSet rs) throws SQLException{
@@ -104,7 +133,7 @@ public class Dao {
         try {
             
             Hidrante hidrante = new Hidrante();
-            hidrante.setCodigo(rs.getString("codigo"));
+            hidrante.setId(rs.getString("id"));
             hidrante.setCaudal(rs.getInt("caudal"));
             hidrante.setNumero_salidas(rs.getInt("numero_salidas"));
             hidrante.setTamano_salidas(rs.getString("tamano_salidas"));

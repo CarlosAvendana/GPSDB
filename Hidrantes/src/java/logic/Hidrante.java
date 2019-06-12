@@ -10,7 +10,7 @@ package logic;
  * @author paoma
  */
 public class Hidrante {
-    String codigo;
+    String id;
     int caudal;
     int numero_salidas;
     String tamano_salidas;
@@ -22,12 +22,12 @@ public class Hidrante {
         this.estado="Excelente";
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getId() {
+        return id;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public int getCaudal() {

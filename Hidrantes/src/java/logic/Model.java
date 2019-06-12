@@ -23,19 +23,26 @@ public class Model {
         dao = new Dao();
     }
     
-    public ArrayList<Bombero> getBomberos() throws SQLException{//Se trae todas las solicitudes existentes
-        return dao.BomberosGetAll();
+    public ArrayList<Usuario> getUsuarios() throws SQLException{//Se trae todas las solicitudes existentes
+        return dao.UsuariosGetAll();
     }
-    public void addBombero(Bombero s)throws SQLException{
-        dao.BomberoAdd(s);
+    public ArrayList<Usuario> getUsuariosBomberos() throws SQLException{//Se trae todas las solicitudes existentes
+        return dao.UsuariosGetBomberos();
+    }
+    public void addUsuario(Usuario s)throws SQLException{
+        dao.UsuarioAdd(s);
     }
     
-    public void updateBombero(Bombero s)throws SQLException{
-        dao.updateBombero(s);
+    public void updateUsuario(Usuario s)throws SQLException{
+        dao.updateUsuario(s);
     }
-    public Bombero getBombero(String s) throws Exception{
-        return dao.getBombero(s);
+    public Usuario getUsuario(Usuario s) throws Exception{
+        return dao.getUsuario(s);
+    }
     
+    
+    public Usuario getUsuarioBom(String s) throws Exception{
+        return dao.getUsuarioBom(s);
     }
     
     public ArrayList<Hidrante> getHidrantes() throws SQLException{//Se trae todas las solicitudes existentes

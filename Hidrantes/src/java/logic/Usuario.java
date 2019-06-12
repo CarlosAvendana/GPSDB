@@ -9,11 +9,13 @@ package logic;
  *
  * @author paoma
  */
-public class Bombero {
+public class Usuario {
     String id;
     String nombre;
+    String contrasena;
+    String departamento;
 
-    public Bombero() {
+    public Usuario() {
     }
 
     public String getId() {
@@ -31,5 +33,21 @@ public class Bombero {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
 }

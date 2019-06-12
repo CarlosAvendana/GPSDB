@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.PUT;
@@ -17,15 +18,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import logic.Bombero;
 import logic.Model;
+import logic.Usuario;
 
 /**
  *
  * @author paoma
  */
-
-    @Path("/bomberos")
+@Path("/bomberos")
 public class Bomberos {
 
     Model model = new Model();
@@ -36,21 +36,22 @@ public class Bomberos {
     
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public ArrayList<Bombero> listar() { 
-            ArrayList<Bombero> bom = null;   
+    public ArrayList<Usuario> listar() { 
+            ArrayList<Usuario> funs = null;   
         try {
-            bom = model.getBomberos();
+            funs = model.getUsuariosBomberos();
         } catch (SQLException ex) {
         }
-        return bom;
+        return funs;
     } 
 
-   @GET
+    @GET
     @Path("{id_bombero}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Bombero get(@PathParam("id_bombero") String id_bombero) {
+    public Usuario get(@PathParam("id_bombero") String id_bombero) {
         try {
-            return model.getBombero(id_bombero);
+            
+            return model.getUsuarioBom(id_bombero);
         } catch (Exception ex) {
         }
         return null;
@@ -59,9 +60,9 @@ public class Bomberos {
     
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void update(Bombero c) {  
+    public void update(Usuario f) {  
         try {
-            model.updateBombero(c);
+            model.updateUsuario(f);
             
         } catch (Exception ex) {
             throw new NotFoundException(); 
@@ -71,14 +72,28 @@ public class Bomberos {
     @PUT
     @Path("{add}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void add(Bombero c) {  
+    public void add(Usuario f) {  
         try {
-            model.addBombero(c);
+            model.addUsuario(f);
             
         } catch (Exception ex) {
             throw new NotFoundException(); 
         }
-   }
+    }
+//    
+//    @DELETE
+//    @Path("{id_bombero}")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public void delete(@PathParam("id_bombero") String id_bombero) { 
+//        Usuario f = new Usuario();
+//        f.setId(id_bombero);
+//        try {
+//            model.deleteUsuario(f);
+//            
+//        } catch (Exception ex) {
+//            throw new NotFoundException(); 
+//        }
+//    }
     
     
 }
