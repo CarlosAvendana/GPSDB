@@ -29,7 +29,7 @@ function mostrarModalNoAsignados(){
 
 function redirige(usuario){
 if(usuario.departamento==="BOMBEROS")
-        window.location.replace("http://localhost:8080/Hidrantes/bombero.jsp");
+        window.location.replace("http://localhost:8080/Hidrantes/hidrantesBomberos.jsp");
     if(usuario.departamento==="MUNICIPALIDAD")
         window.location.replace("http://localhost:8080/Hidrantes/hidrantesMuni.jsp");
     

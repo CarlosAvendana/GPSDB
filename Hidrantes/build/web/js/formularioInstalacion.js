@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 function guardarHidrante(){
-    alert("hola");
+    var e = document.getElementById("tamano");
+    var criterio = e.options[e.selectedIndex].value;
     var hidrante = {
                 id: $("input#id").val(),
                 caudal: $("input#caudal").val(),
                 numero_salidas: $("input#cantidad").val(),
-                tamano_salidas: $("#tamano").val(),
+                tamano_salidas: criterio,
                 estado: "Excelente",
                 longitud: $("input#longitud").val(),
                 latitud: $("input#latitud").val()

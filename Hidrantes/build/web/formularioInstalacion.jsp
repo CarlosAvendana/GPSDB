@@ -66,7 +66,7 @@
     </div>
     <div class="form-group col-md-6">
       <label for="tamano">Tamaño de salidas</label>
-      <select class="form-control" name="tamano">
+      <select class="form-control" id="tamano">
           <option selected>Seleccione...</option>
           <option value="Grande">Grande</option>
           <option value="Mediano">Mediano</option>
