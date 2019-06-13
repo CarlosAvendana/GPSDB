@@ -31,7 +31,7 @@
         <a class="nav-link" href="FormularioInstalacion.jsp">Formulario de Instalación<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Formulario de Mantenimiento<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="FormularioMantenimiento.jsp">Formulario de Mantenimiento<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="Inspecciones.jsp">Inspecciones<span class="sr-only">(current)</span></a>

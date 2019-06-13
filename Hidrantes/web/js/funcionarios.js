@@ -30,7 +30,6 @@ function lista(usuarios){
         tr.html(
             "<td>"+usuario.id+"</td>"            
             +"<td>"+usuario.nombre+"</td>"
-            +"<td><img src='images/editar.png' width='30' height='30' onclick='mostrarModal(\""+usuario.id+"\")'></td>"
             +"<td><img src='images/borrar.png' width='30' height='30' onclick='eliminarFuncionario(\""+usuario.id+"\")'></td>");
   
         listado.append(tr);

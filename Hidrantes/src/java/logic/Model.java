@@ -48,6 +48,9 @@ public class Model {
     public void addUsuario(Usuario s)throws SQLException{
         dao.UsuarioAdd(s);
     }
+    public ArrayList<Hidrante> getRPH(float a, float b, float c) throws SQLException{
+        return dao.getRPH(a, b, c);
+    }
     
     public void addFormulario(Formulario_trabajo_realizado s)throws SQLException{
         dao.FormularioAdd(s);

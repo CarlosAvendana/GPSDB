@@ -8,11 +8,15 @@ package api.inspecciones;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.NotFoundException;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import logic.Formulario_trabajo_realizado;
 import logic.Inspeccion_ocular;
 import logic.Model;
 import logic.Usuario;
@@ -40,4 +44,15 @@ public class Inspecciones {
         }
         return funs;
     } 
+    @PUT
+    @Path("{mante}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void mantenimiento(Formulario_trabajo_realizado c) {  
+        try {
+            model.addFormulario(c);
+            
+        } catch (Exception ex) {
+            throw new NotFoundException(); 
+        }
+   }
 }

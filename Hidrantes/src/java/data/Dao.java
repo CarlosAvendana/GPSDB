@@ -23,7 +23,6 @@ public class Dao {
     
     public Dao(){
         db= new RealDataBase();
-        
     }
     public ArrayList<Usuario> UsuariosGetAll () throws SQLException {
         String sql = "select * from usuario";
@@ -71,12 +70,23 @@ public class Dao {
     }
     
     public void UsuarioAdd(Usuario s)throws SQLException{
-         String sql="insert into usuario (id, nombre, contrasena, departamento)"+
-                "values('%s','%s','%s','%s')";
+         String sql="select * from FUNC_USUARIO_INSERTAR('%s','%s','%s','%s')";
         sql=String.format(sql,s.getId(), s.getNombre(),s.getContrasena(),s.getDepartamento());
-        db.executeUpdate(sql);
+        db.executeUpdate(sql);  
+    }
+    
+    public ArrayList<Hidrante> getRPH(float lon, float lan, float r)throws SQLException{
+        String sql="select * from FUNC_RPH(%f,%f,%f)";
+        sql=String.format(sql,lon,lan,r);
+        ResultSet rs = db.executeQuery(sql);  
+        ArrayList<Hidrante> hidrantes = new ArrayList<Hidrante>();
+        Hidrante hidrante = null;
         
-        
+        while(rs.next()){   
+            hidrante = hidrante(rs);
+            hidrantes.add(hidrante);
+        }   
+        return hidrantes;
     }
     
      public void FormularioAdd(Formulario_trabajo_realizado s)throws SQLException{
@@ -231,20 +241,17 @@ public class Dao {
     }
     
     public void HidranteAdd(Hidrante s)throws SQLException{
-         String sql="insert into hidrante (id, caudal, numero_salidas, tamano_salidas, estado, latitud, longitud)"+
-                "values('%s',%d, %d,'%s','%s', %f,%f)";
+         String sql="select * from FUNC_HIDRANTE_INSERTAR('%s',%d, %d,'%s','%s', %f,%f)";
         sql=String.format(sql,s.getId(), s.getCaudal(), s.getNumero_salidas(), s.getTamano_salidas(), s.getEstado(), s.getLatitud(), s.getLongitud());
         db.executeUpdate(sql); 
     }
     public void Inspeccion_ocularAdd(Inspeccion_ocular s)throws SQLException{
-         String sql="insert into inspeccion_ocular (id, usuario, fecha)"+
-                "values('%s','%s', '%s')";
+         String sql="select * from FUNC_INSPECCION_OCULAR_INSERTAR('%s','%s', '%s')";
         sql=String.format(sql,s.getId(), s.getUsuario().getId(), s.getFecha());
         db.executeUpdate(sql); 
     }
     public void Inspeccion_hidranteAdd(Inspeccion_hidrante s)throws SQLException{
-         String sql="insert into inspeccion_hidrante (inspeccion_ocular, hidrante)"+
-                "values('%s','%s')";
+         String sql="select * from FUNC_INSPECCION_OCULAR_INSERTAR('%s','%s')";
         sql=String.format(sql,s.getInspeccion_ocular().getId(), s.getHidrante().getId());
         db.executeUpdate(sql); 
         this.updateHidrante(s.getHidrante().getId(),s.getHidrante().getEstado());
