@@ -17,6 +17,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import logic.Formulario_trabajo_realizado;
 import logic.Hidrante;
 import logic.Model;
 
@@ -70,9 +71,10 @@ public class Hidrantes {
     @PUT
     @Path("{add}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public void add(Hidrante c) {  
+    public void add(Formulario_trabajo_realizado c) {  
         try {
-            model.addHidrante(c);
+            model.addFormulario(c);
+            model.addHidrante(c.getHidrante());
             
         } catch (Exception ex) {
             throw new NotFoundException(); 

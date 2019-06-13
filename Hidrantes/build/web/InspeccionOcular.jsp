@@ -24,7 +24,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item active">
-        <a class="nav-link" href="#">Hidrantes<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="hidrantesBomberos.jsp">Hidrantes<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="InspeccionOcular.jsp">Inspeccion Ocular <span class="sr-only">(current)</span></a>
@@ -41,7 +41,7 @@
     </ul>
   </div>
 </nav>
-        <h1>Inspección Ocular</h1>
+        
         
         <div class="container">
   <div class="row">
@@ -49,6 +49,7 @@
       
     </div>
     <div class="col-sm-11">
+        <h1>Inspección Ocular</h1>
         <form>
   
       <div class="form-group">
@@ -74,7 +75,37 @@
       <label for="bombero">Bombero</label>
       <select class="form-control" id="bomberos"></select>
     </div>       
-  
+            <h3>Hidrantes inspeccionados</h3>
+            <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="hidrantes">Hidrante</label>
+      <select class="form-control" id="hidrantes"></select>
+    </div>     
+      <div class="form-group col-md-4">
+      <label for="estado">Estado</label>
+      <select class="form-control" id="estado">
+          <option selected>Seleccione...</option>
+          <option value="Excelente">Excelente</option>
+          <option value="Regular">Regular</option>
+          <option value="Deficiente">Deficiente</option>
+      </select>
+    </div>
+     <div class="form-group col-md-4">
+      <button type="button" onclick="guardarHidranteInspeccionado()" class="btn btn-primary">Agregar</button>
+    </div>
+                
+            </div>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Hidrante</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody id="listado">
+    
+  </tbody>
+</table>
   
   <button type="button" onclick="guardarInspeccion()" class="btn btn-primary">Guardar</button>
 </form>

@@ -10,7 +10,6 @@ package logic;
  * @author paoma
  */
 public class Formulario_trabajo_realizado {
-    String id;
     String tipo;
     String fecha;
     Hidrante hidrante;
@@ -18,13 +17,6 @@ public class Formulario_trabajo_realizado {
     public Formulario_trabajo_realizado() {
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getTipo() {
         return tipo;

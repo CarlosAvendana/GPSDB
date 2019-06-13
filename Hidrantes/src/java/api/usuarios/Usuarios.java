@@ -5,6 +5,8 @@
  */
 package api.usuarios;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -31,6 +33,52 @@ public class Usuarios {
     @Context
     HttpServletRequest request;
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public ArrayList<Usuario> listar() { 
+            ArrayList<Usuario> funs = null;   
+        try {
+            funs = model.getUsuariosMunicipalidad();
+        } catch (SQLException ex) {
+        }
+        return funs;
+    } 
+
+    @GET
+    @Path("{id_usuario}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Usuario get(@PathParam("id_usuario") String id_usuario) {
+        try {
+            
+            return model.getUsuarioMuni(id_usuario);
+        } catch (Exception ex) {
+        }
+        return null;
+    }
+    
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void update(Usuario f) {  
+        try {
+            model.updateUsuario(f);
+            
+        } catch (Exception ex) {
+            throw new NotFoundException(); 
+        }
+    }
+    
+    @PUT
+    @Path("{add}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void add(Usuario f) {  
+        try {
+            model.addUsuario(f);
+            
+        } catch (Exception ex) {
+            throw new NotFoundException(); 
+        }
+    }
     
      @POST
     @Consumes(MediaType.APPLICATION_JSON)

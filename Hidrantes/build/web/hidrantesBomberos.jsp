@@ -43,7 +43,7 @@
   </div>
 </nav>
  
-        <h1>Hidrantes</h1>
+        
 
         <div class="container">
   <div class="row">
@@ -51,6 +51,7 @@
       
     </div>
     <div class="col-lg-12">
+        <h1>Hidrantes</h1>
         <table class="table">
             <tr>
                 <th>ID</th>

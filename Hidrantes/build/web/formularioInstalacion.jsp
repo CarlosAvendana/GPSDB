@@ -33,10 +33,10 @@
         <a class="nav-link" href="#">Formulario de Mantenimiento<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Inspecciones<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Inspecciones.jsp">Inspecciones<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Funcionarios<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Funcionarios.jsp">Funcionarios<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="index.jsp">Cerrar Sesión</a>
@@ -44,21 +44,32 @@
     </ul>
   </div>
 </nav>
-        <h1>Formulario de Instalación</h1>
-        
+              
         <div class="container">
   <div class="row">
-    <div class="col-sm">
-      
+    <div class="col-sm">      
     </div>
     <div class="col-sm-11">
-        <form>
-  
+        <h1>Formulario de Instalación</h1>  
+        <form>  
+            <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="dia">Día</label>
+      <input type="text" class="form-control" id="dia" placeholder="Día...">
+    </div>
+     <div class="form-group col-md-4">
+      <label for="mes">Mes</label>
+      <input type="text" class="form-control" id="mes" placeholder="Mes...">
+    </div>
+         <div class="form-group col-md-4">
+      <label for="anio">Año</label>
+      <input type="text" class="form-control" id="anio" placeholder="Año...">
+    </div>
+  </div>
       <div class="form-group">
     <label for="id">Codigo</label>
     <input type="text" class="form-control" id="id" placeholder="Codigo de hidrante...">
   </div>
-  
             <div class="form-row">
     <div class="form-group col-md-6">
       <label for="cantidad">Cantidad de salidas</label>
@@ -88,15 +99,12 @@
       <input type="text" class="form-control" id="latitud" placeholder="Latitud...">
     </div>
   </div>
-  
   <button type="button" onclick="guardarHidrante()" class="btn btn-primary">Guardar</button>
 </form>
     </div>
     <div class="col-sm">
-      
     </div>
   </div>
 </div>
-        
     </body>
 </html>

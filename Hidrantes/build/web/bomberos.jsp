@@ -32,7 +32,7 @@
         <a class="nav-link" href="#">Bomberos<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Radio Positivo de Hidrantes<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="rph.jsp">Radio Positivo de Hidrantes<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="index.jsp">Cerrar Sesión</a>
@@ -41,13 +41,14 @@
   </div>
 </nav>
         
-        <h1>Funcionarios</h1>
+        
         <div class="container">
   <div class="row">
     <div class="col-sm">
   
     </div>
     <div class="col-sm-11">
+        <h1>Funcionarios</h1>
       <div class="input-group">
             <label for="busqueda">Nombre</label>
   <input type="text" id="busqueda" class="form-control" placeholder="Nombre...">

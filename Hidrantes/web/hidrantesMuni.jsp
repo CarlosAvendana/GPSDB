@@ -34,10 +34,10 @@
         <a class="nav-link" href="#">Formulario de Mantenimiento<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Inspecciones<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Inspecciones.jsp">Inspecciones<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Funcionarios<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Funcionarios.jsp">Funcionarios<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="index.jsp">Cerrar Sesión</a>
@@ -46,7 +46,7 @@
   </div>
 </nav>
  
-        <h1>Hidrantes</h1>
+        
 
         <div class="container">
   <div class="row">
@@ -54,6 +54,7 @@
       
     </div>
     <div class="col-lg-12">
+        <h1>Hidrantes</h1>
         <table class="table">
             <tr>
                 <th>ID</th>

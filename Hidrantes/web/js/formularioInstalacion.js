@@ -15,10 +15,14 @@ function guardarHidrante(){
                 longitud: $("input#longitud").val(),
                 latitud: $("input#latitud").val()
             };
-            alert(hidrante.tamano_salidas);
+    var formulario = {
+        tipo: "INSTALACION",
+        fecha: $("input#dia").val()+"-"+$("input#mes").val()+"-"+$("input#anio").val(),
+        hidrante: hidrante
+    }
             $.ajax({type: "PUT", 
                   url:"api/hidrantes/add", 
-                  data: JSON.stringify(hidrante),
+                  data: JSON.stringify(formulario),
                   contentType: "application/json",
                   success: window.location.replace("http://localhost:8080/Hidrantes/hidrantesMuni.jsp"),
                   error: function(jqXHR){ alert(errorMessage(jqXHR.status));}               
