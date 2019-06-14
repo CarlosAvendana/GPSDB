@@ -14,6 +14,8 @@
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/js/municipalidad.js</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/js/formularioInstalacion.js</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/index.jsp</file>
+            <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/FormularioMantenimiento.jsp</file>
+            <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/js/rph.js</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/Bomberos.jsp</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/hidrantesMuni.jsp</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/logic/Inspeccion_hidrante.java</file>
@@ -28,11 +30,14 @@
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/logic/Hidrante.java</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/js/inspeccionOcular.js</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/api/hidrantesInspeccionados/HidrantesInspeccionados.java</file>
+            <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/js/formularioMantenimiento.js</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/api/usuarios/Usuarios.java</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/logic/Model.java</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/api/inspecciones/Inspecciones.java</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/logic/Usuario.java</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/Inspecciones.jsp</file>
+            <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/rph.jsp</file>
+            <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/src/java/logic/RPH.java</file>
             <file>file:/C:/Users/paoma/Documents/GitHub/GPSDB/Hidrantes/web/js/bomberos.js</file>
         </group>
     </open-files>
